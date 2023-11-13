@@ -1,0 +1,17 @@
+.Tilt{
+    margin: 30px;
+    background: #FFAAAA;
+}
+
+.parallax-effect-img {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    background-size: contain;
+    background-repeat: no-repeat;
+}  
+
+.inner-element{
+    width: 150px;
+    height: 150px;
+}
+
