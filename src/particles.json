@@ -1,7 +1,4 @@
 {
-  "background": {
-    "color": "#D46A6A"
-  },
   "interactivity": {
     "events": {
       "onClick": {
