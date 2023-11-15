@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
+
 body {
   margin: 0;
   padding: 0;
   background: linear-gradient(105.4deg, rgb(53, 169, 215) 23.9%, rgb(216, 176, 216) 86.5%);
+  font-family: 'Glass Antiqua', cursive;
 }
 
 

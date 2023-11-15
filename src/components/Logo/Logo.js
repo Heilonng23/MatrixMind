@@ -6,7 +6,7 @@ import './Logo.css';
 
 const Logo = () => {
     return (
-        <div className="ma4 mt2">
+        <div className="ma2 mt2">
             <Tilt
                 className="parallax-effect-img Tilt br3 shadow-5"
                 tiltMaxAngleX={40}
