@@ -26,15 +26,6 @@ const initialState = {
     }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// In this section, we set the user authentication, user and app ID, model details, and the URL
-// of the image we want as an input. Change these strings to run your own example.
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-   
-    
-
-
 class App extends Component {
 
     constructor() {
@@ -57,8 +48,9 @@ class App extends Component {
     calculateFaceLocation = (data) => {
         const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
         const image = document.getElementById('inputImage');
-        const width = Number(image.width);
+        const width = Number(image.width)
         const height = Number(image.height);
+
         return {
             leftCol: clarifaiFace.left_col * width,
             topRow: clarifaiFace.top_row * height,
@@ -71,40 +63,6 @@ class App extends Component {
         this.setState({ box: box })
     }
     
-    ClarifaiRequestOptions = (imgUrl) => {
-        const PAT = '65994726c8584070ab887847455b1490';
-        const USER_ID = 'fver1b6m1eh4';
-        const APP_ID = 'test';
-        const IMAGE_URL = imgUrl;
-
-        const raw = JSON.stringify({
-            "user_app_id": {
-                "user_id": USER_ID,
-                "app_id": APP_ID
-            },
-            "inputs": [
-                {
-                    "data": {
-                        "image": {
-                            "url": IMAGE_URL
-                            // "base64": IMAGE_BYTES_STRING
-                        }
-                    }
-                }
-            ]
-        });
-
-        const requestOptions = {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Authorization': 'Key ' + PAT
-            },
-            body: raw
-        };
-
-        return requestOptions;
-    }
 
     onInputChange = (event) => {
         this.setState({ input: event.target.value });
@@ -113,7 +71,13 @@ class App extends Component {
     onBtnSubmit = () => {
         this.setState({ imgUrl: this.state.input });
 
-        fetch("https://api.clarifai.com/v2/models/" + 'face-detection' + "/outputs", this.ClarifaiRequestOptions(this.state.input))
+        fetch("http://localhost:3000/imageUrl",{
+            method: 'post',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              input: this.state.input
+            })
+        })
             .then(response => response.json())
             .then(response => {
                 if (response) {
@@ -136,15 +100,11 @@ class App extends Component {
 
     onRouteChange = (route) =>{ 
         if(route === 'signout'){
-            this.setState(
-                {
-                    isSignedIn: false
-                }
-            )
+            this.setState(initialState);
         }else if(route === 'home'){
             this.setState(
                 {
-                    isSignedIn: true
+                    isSignedIn: true    
                 }
             )
         }
