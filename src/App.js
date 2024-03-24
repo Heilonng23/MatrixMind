@@ -10,7 +10,7 @@ import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import './App.css';
-//you need your own API key to join.
+//you need your own API key to
 const initialState = {
     input: '',
     imgUrl: ' ',
