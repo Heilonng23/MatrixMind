@@ -1,6 +1,7 @@
-# React App
+#React App
+Mind Matrix Face Detection API
 
-Welcome to my Mind Matrix application! This application requires an API key to function properly. Follow the instructions below to set up and run the project on your local machine.
+Mind Matrix Face Detection API is a powerful tool designed to help you easily identify and locate faces within your images. Whether you're working on a photography project, developing facial recognition software, or simply want to enhance your photo management application, this API provides the functionality you need.
 ![Screenshot 2024-03-24 091556](https://github.com/Heilonng23/MindMatrix/assets/97885427/5208074c-03d9-4625-b0ee-dc6a7286f6ec)
 ## Getting Started
 
