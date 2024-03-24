@@ -1,10 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap');
 
 body {
   margin: 0;
-  padding: 0;
-  background: linear-gradient(105.4deg, rgb(53, 169, 215) 23.9%, rgb(216, 176, 216) 86.5%);
-  font-family: 'Glass Antiqua', cursive;
+  font-family: "Courier New", Courier, monospace;
+    background: #3a6186;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #89253e, #3a6186);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89253e, #3a6186); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+button{
+  cursor: pointer;
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 
